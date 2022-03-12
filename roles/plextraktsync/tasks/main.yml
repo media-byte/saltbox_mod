@@ -1,0 +1,8 @@
+- name: "Execute Plextraktsync tasks"
+  include_tasks: main2.yml
+  vars:
+    plextraktsync_name: "plextraktsync-{{ plexuser }}"
+    plextraktsync_paths_location: "{{ server_appdata_path }}/plextraktsync/{{ plextraktsync_paths_folder }}"
+  with_items: "{{ plextraktsync.plexusers }}"
+  loop_control:
+    loop_var: plexuser
