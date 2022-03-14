@@ -27,6 +27,7 @@
 - name: Install Organize-Tool
   pip:
     name: organize-tool
+  ignore_errors: yes
 
 - name: Runs the organizr command every 5 mins
   ansible.builtin.cron:
