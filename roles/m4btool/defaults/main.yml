@@ -31,7 +31,7 @@ m4btool_docker_container: "{{ m4btool_name }}"
 
 # Image
 m4btool_docker_image_pull: true
-m4btool_docker_image_tag: "latest"
+m4btool_docker_image_tag: "docker"
 m4btool_docker_image: "ghcr.io/media-byte/auto-m4btool:{{ m4btool_docker_image_tag }}"
 
 # Envs
