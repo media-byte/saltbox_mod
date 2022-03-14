@@ -19,7 +19,7 @@
     mode: "0775"
     recurse: yes
   with_items:
-  - "{{ lookup('vars', role_name + '_paths_folders_list') }}"
+  - "{{ m4btool_paths_location }}"
   - "/mnt/local/downloads/audiobooks/temp/untagged"
   - "/mnt/local/downloads/audiobooks/temp/mp3merge"
   - "/mnt/local/downloads/audiobooks/temp/delete"
