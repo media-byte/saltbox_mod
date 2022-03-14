@@ -1,0 +1,111 @@
+#########################################################################
+# Title:            Sandbox Mod: Audiobook-Automation                   #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/media-byte/saltbox_mod           #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+---
+################################
+# Basics
+################################
+
+m4bmerge_name: m4bmerge
+
+################################
+# Paths
+################################
+
+m4bmerge_paths_folder: "{{ m4bmerge_name }}"
+m4bmerge_paths_location: "{{ server_appdata_path }}/ab-automation/{{ m4bmerge_paths_folder }}"
+m4bmerge_paths_folders_list:
+  - "{{ m4bmerge_paths_location }}"
+
+################################
+# Docker
+################################
+
+# Container
+m4bmerge_docker_container: "{{ m4bmerge_name }}"
+
+# Image
+m4bmerge_docker_image_pull: true
+m4bmerge_docker_image_tag: "latest"
+m4bmerge_docker_image: "ghcr.io/media-byte/auto-m4btool:{{ m4bmerge_docker_image_tag }}"
+
+# Envs
+m4bmerge_docker_envs_default:
+  TZ: "{{ tz }}"
+m4bmerge_docker_envs_custom: {}
+m4bmerge_docker_envs: "{{ m4bmerge_docker_envs_default
+                         | combine(m4bmerge_docker_envs_custom) }}"
+
+# Commands
+m4bmerge_docker_commands_default: []
+m4bmerge_docker_commands_custom: []
+m4bmerge_docker_commands: "{{ m4bmerge_docker_commands_default
+                             + m4bmerge_docker_commands_custom }}"
+
+# Volumes
+m4bmerge_docker_volumes_default:
+  - "{{ m4bmerge_paths_location }}:/config"
+m4bmerge_docker_volumes_custom:
+  - "/mnt/local/downloads/audiobooks/temp:/temp"
+m4bmerge_docker_volumes: "{{ m4bmerge_docker_volumes_default
+                            + m4bmerge_docker_volumes_custom }}"
+
+# Devices
+m4bmerge_docker_devices_default: []
+m4bmerge_docker_devices_custom: []
+m4bmerge_docker_devices: "{{ m4bmerge_docker_devices_default
+                            + m4bmerge_docker_devices_custom }}"
+
+# Hosts
+m4bmerge_docker_hosts_default: []
+m4bmerge_docker_hosts_custom: []
+m4bmerge_docker_hosts: "{{ docker_hosts_common
+                          | combine(m4bmerge_docker_hosts_default)
+                          | combine(m4bmerge_docker_hosts_custom) }}"
+
+# Labels
+m4bmerge_docker_labels_default: {}
+m4bmerge_docker_labels_custom: {}
+m4bmerge_docker_labels: "{{ docker_labels_common
+                           | combine(m4bmerge_docker_labels_default)
+                           | combine(m4bmerge_docker_labels_custom) }}"
+
+# Hostname
+m4bmerge_docker_hostname: "{{ m4bmerge_name }}"
+
+# Networks
+m4bmerge_docker_networks_alias: "{{ m4bmerge_name }}"
+m4bmerge_docker_networks_default: []
+m4bmerge_docker_networks_custom: []
+m4bmerge_docker_networks: "{{ docker_networks_common
+                             + m4bmerge_docker_networks_default
+                             + m4bmerge_docker_networks_custom }}"
+
+# Capabilities
+m4bmerge_docker_capabilities_default: []
+m4bmerge_docker_capabilities_custom: []
+m4bmerge_docker_capabilities: "{{ m4bmerge_docker_capabilities_default
+                                 + m4bmerge_docker_capabilities_custom }}"
+
+# Security Opts
+m4bmerge_docker_security_opts_default: []
+m4bmerge_docker_security_opts_custom: []
+m4bmerge_docker_security_opts: "{{ m4bmerge_docker_security_opts_default
+                                  + m4bmerge_docker_security_opts_custom }}"
+
+# Restart Policy
+m4bmerge_docker_restart_policy: unless-stopped
+
+# State
+m4bmerge_docker_state: started
+
+# Stop Timeout
+m4bmerge_docker_stop_timeout: 10
+
+# User
+m4bmerge_docker_user: "{{ uid }}:{{ gid }}"
