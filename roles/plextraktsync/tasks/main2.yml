@@ -33,10 +33,11 @@
 
 - name: Runs the plextraktsync command every 12 hours
   ansible.builtin.cron:
-    name: "Move Audiobook files"
+    name: "Run plextraktsync sync"
     minute: "0"
     hour: "12"
     job: "/bin/bash /opt/plextraktsync/pts.sh"
+    user: "{{ user.name }}"
 
 - name: Post-Install Tasks
   import_tasks: "subtasks/post-install/main.yml"

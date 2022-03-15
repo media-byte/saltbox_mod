@@ -1,165 +1,56 @@
 
-2022-03-12 20:10:42,349 p=3710875 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************
-2022-03-12 20:10:42,369 p=3710875 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************
-2022-03-12 20:10:42,369 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:42 +0530 (0:00:00.024)       0:00:00.024 ******** 
-2022-03-12 20:10:44,273 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:44,301 p=3710875 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************
-2022-03-12 20:10:44,301 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:44 +0530 (0:00:01.932)       0:00:01.956 ******** 
-2022-03-12 20:10:44,665 p=3710875 u=root n=ansible | changed: [localhost] => (item=/var/lib/apt/lists/lock)
-2022-03-12 20:10:44,863 p=3710875 u=root n=ansible | ok: [localhost] => (item=/var/cache/apt/archives/lock)
-2022-03-12 20:10:45,058 p=3710875 u=root n=ansible | changed: [localhost] => (item=/var/lib/dpkg/lock)
-2022-03-12 20:10:45,095 p=3710875 u=root n=ansible | TASK [plextraktsync : Execute Plextraktsync tasks] *********************************************************************************
-2022-03-12 20:10:45,095 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:45 +0530 (0:00:00.793)       0:00:02.750 ******** 
-2022-03-12 20:10:45,140 p=3710875 u=root n=ansible | included: /opt/saltbox_mod/roles/plextraktsync/tasks/main2.yml for localhost => (item=hackmonker)
-2022-03-12 20:10:45,160 p=3710875 u=root n=ansible | TASK [plextraktsync : Remove existing Docker container] ****************************************************************************
-2022-03-12 20:10:45,160 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:45 +0530 (0:00:00.064)       0:00:02.815 ******** 
-2022-03-12 20:10:45,190 p=3710875 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/remove_docker_container.yml for localhost
-2022-03-12 20:10:45,207 p=3710875 u=root n=ansible | TASK [plextraktsync : Resources | Tasks | Docker | Remove Docker Container | Set '_var_prefix' variable] ***************************
-2022-03-12 20:10:45,207 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:45 +0530 (0:00:00.046)       0:00:02.862 ******** 
-2022-03-12 20:10:45,231 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:45,245 p=3710875 u=root n=ansible | TASK [plextraktsync : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container] ******************************
-2022-03-12 20:10:45,245 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:45 +0530 (0:00:00.038)       0:00:02.900 ******** 
-2022-03-12 20:10:46,349 p=3710875 u=root n=ansible | changed: [localhost]
-2022-03-12 20:10:46,364 p=3710875 u=root n=ansible | TASK [plextraktsync : Create directories] ******************************************************************************************
-2022-03-12 20:10:46,365 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:46 +0530 (0:00:01.119)       0:00:04.020 ******** 
-2022-03-12 20:10:46,631 p=3710875 u=root n=ansible | changed: [localhost] => (item=/opt/plextraktsync/plextraktsync-hackmonker)
-2022-03-12 20:10:46,669 p=3710875 u=root n=ansible | TASK [plextraktsync : Check if `.env` exists] **************************************************************************************
-2022-03-12 20:10:46,669 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:46 +0530 (0:00:00.304)       0:00:04.324 ******** 
-2022-03-12 20:10:47,034 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:47,046 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install Tasks] *******************************************************************************************
-2022-03-12 20:10:47,047 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.377)       0:00:04.702 ******** 
-2022-03-12 20:10:47,114 p=3710875 u=root n=ansible | included: /opt/saltbox_mod/roles/plextraktsync/tasks/subtasks/pre-install/main.yml for localhost
-2022-03-12 20:10:47,138 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install | Import Default Plex variables] *****************************************************************
-2022-03-12 20:10:47,138 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.091)       0:00:04.793 ******** 
-2022-03-12 20:10:47,160 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:47,179 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install | Check if Preferences.xml exists] ***************************************************************
-2022-03-12 20:10:47,179 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.041)       0:00:04.834 ******** 
-2022-03-12 20:10:47,414 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:47,433 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install | Get Preferences.xml XML data] ******************************************************************
-2022-03-12 20:10:47,434 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.254)       0:00:05.089 ******** 
-2022-03-12 20:10:47,828 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:47,843 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install | Set plex_host_username variable] ***************************************************************
-2022-03-12 20:10:47,843 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.409)       0:00:05.498 ******** 
-2022-03-12 20:10:47,870 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:47,884 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Create directories] ***************************************************************************
-2022-03-12 20:10:47,884 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:47 +0530 (0:00:00.040)       0:00:05.539 ******** 
-2022-03-12 20:10:48,110 p=3710875 u=root n=ansible | changed: [localhost]
-2022-03-12 20:10:48,125 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Check if PIN exists] **************************************************************************
-2022-03-12 20:10:48,125 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.241)       0:00:05.780 ******** 
-2022-03-12 20:10:48,349 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:48,362 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_auth_client_identifier] **************************************************************
-2022-03-12 20:10:48,363 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.237)       0:00:06.018 ******** 
-2022-03-12 20:10:48,392 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,406 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_auth_client_identifier] **************************************************************
-2022-03-12 20:10:48,407 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.044)       0:00:06.062 ******** 
-2022-03-12 20:10:48,446 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:48,461 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_auth_token variable if previously saved] *********************************************
-2022-03-12 20:10:48,461 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.054)       0:00:06.116 ******** 
-2022-03-12 20:10:48,491 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,505 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_no_token status] *********************************************************************
-2022-03-12 20:10:48,506 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.044)       0:00:06.161 ******** 
-2022-03-12 20:10:48,539 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:48,553 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Check if Token is valid] **********************************************************************
-2022-03-12 20:10:48,554 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.048)       0:00:06.209 ******** 
-2022-03-12 20:10:48,584 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,599 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Generate PIN] *********************************************************************************
-2022-03-12 20:10:48,599 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.045)       0:00:06.254 ******** 
-2022-03-12 20:10:48,632 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,650 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Prompt user to login] *************************************************************************
-2022-03-12 20:10:48,650 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.050)       0:00:06.305 ******** 
-2022-03-12 20:10:48,680 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,695 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Check PIN] ************************************************************************************
-2022-03-12 20:10:48,695 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.045)       0:00:06.350 ******** 
-2022-03-12 20:10:48,726 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,740 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Add Client Identifier to '/opt/saltbox/plex.ini'] *********************************************
-2022-03-12 20:10:48,741 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.045)       0:00:06.396 ******** 
-2022-03-12 20:10:48,771 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,785 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Add Plex Token to '/opt/saltbox/plex.ini'] ****************************************************
-2022-03-12 20:10:48,785 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.044)       0:00:06.440 ******** 
-2022-03-12 20:10:48,818 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,834 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_auth_token variable] *****************************************************************
-2022-03-12 20:10:48,834 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.048)       0:00:06.489 ******** 
-2022-03-12 20:10:48,866 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:48,880 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Get X-Plex-Token] *****************************************************************************
-2022-03-12 20:10:48,881 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:48 +0530 (0:00:00.046)       0:00:06.536 ******** 
-2022-03-12 20:10:51,775 p=3710875 u=root n=ansible | [WARNING]: Module did not set no_log for password
-
-2022-03-12 20:10:51,775 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:51,788 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Set plex_auth_token variable] *****************************************************************
-2022-03-12 20:10:51,788 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:51 +0530 (0:00:02.907)       0:00:09.443 ******** 
-2022-03-12 20:10:51,822 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:51,838 p=3710875 u=root n=ansible | TASK [plex_auth_token : Auth Token | Display Plex Auth Token] **********************************************************************
-2022-03-12 20:10:51,838 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:51 +0530 (0:00:00.050)       0:00:09.493 ******** 
-2022-03-12 20:10:51,872 p=3710875 u=root n=ansible | ok: [localhost] => {
-    "msg": "Plex Auth Token: R37YRD_FBU8yezzbjmzF"
-}
-2022-03-12 20:10:51,884 p=3710875 u=root n=ansible | TASK [plex_auth_token : Change permissions] ****************************************************************************************
-2022-03-12 20:10:51,885 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:51 +0530 (0:00:00.046)       0:00:09.540 ******** 
-2022-03-12 20:10:52,135 p=3710875 u=root n=ansible | changed: [localhost]
-2022-03-12 20:10:52,164 p=3710875 u=root n=ansible | TASK [plextraktsync : Pre-Install | Create .env] ***********************************************************************************
-2022-03-12 20:10:52,164 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:52 +0530 (0:00:00.279)       0:00:09.819 ******** 
-2022-03-12 20:10:52,838 p=3710875 u=root n=ansible | changed: [localhost]
-2022-03-12 20:10:52,852 p=3710875 u=root n=ansible | TASK [plextraktsync : Create Docker container] *************************************************************************************
-2022-03-12 20:10:52,852 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:52 +0530 (0:00:00.687)       0:00:10.507 ******** 
-2022-03-12 20:10:52,884 p=3710875 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/create_docker_container.yml for localhost
-2022-03-12 20:10:52,913 p=3710875 u=root n=ansible | TASK [plextraktsync : Resources | Tasks | Docker | Create Docker Container | Set '_var_prefix' variable] ***************************
-2022-03-12 20:10:52,914 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:52 +0530 (0:00:00.061)       0:00:10.569 ******** 
-2022-03-12 20:10:52,937 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:52,952 p=3710875 u=root n=ansible | TASK [plextraktsync : Resources | Tasks | Docker | Create Docker Container | Create Docker Container] ******************************
-2022-03-12 20:10:52,952 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:52 +0530 (0:00:00.038)       0:00:10.607 ******** 
-2022-03-12 20:10:56,069 p=3710875 u=root n=ansible | changed: [localhost]
-2022-03-12 20:10:56,095 p=3710875 u=root n=ansible | TASK [plextraktsync : Post-Install | Check if `.pytrakt.json` exists] **************************************************************
-2022-03-12 20:10:56,095 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:56 +0530 (0:00:03.142)       0:00:13.750 ******** 
-2022-03-12 20:10:56,342 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:56,355 p=3710875 u=root n=ansible | TASK [plextraktsync : Post-Install | Check if a Trakt.tv username is provided] *****************************************************
-2022-03-12 20:10:56,355 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:56 +0530 (0:00:00.259)       0:00:14.010 ******** 
-2022-03-12 20:10:56,805 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:56,821 p=3710875 u=root n=ansible | TASK [plextraktsync : Post-Install | Check if a Plex.tv username is provided] ******************************************************
-2022-03-12 20:10:56,822 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:56 +0530 (0:00:00.466)       0:00:14.477 ******** 
-2022-03-12 20:10:57,041 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:57,054 p=3710875 u=root n=ansible | TASK [plextraktsync : Post-Install | Warn if no Plex.tv username is provided] ******************************************************
-2022-03-12 20:10:57,055 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:57 +0530 (0:00:00.233)       0:00:14.710 ******** 
-2022-03-12 20:10:57,074 p=3710875 u=root n=ansible | skipping: [localhost]
-2022-03-12 20:10:57,092 p=3710875 u=root n=ansible | TASK [plextraktsync : Post-Install | Guide if Trakt.tv login data is missing] ******************************************************
-2022-03-12 20:10:57,092 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:57 +0530 (0:00:00.037)       0:00:14.747 ******** 
-2022-03-12 20:10:57,122 p=3711671 u=root n=ansible | Pausing for 1 seconds
-2022-03-12 20:10:57,123 p=3711671 u=root n=ansible | (ctrl+C then 'C' = continue early, ctrl+C then 'A' = abort)
-2022-03-12 20:10:57,123 p=3711671 u=root n=ansible | [plextraktsync : Post-Install | Guide if Trakt.tv login data is missing]
-
-╔════ Fresh install detected ════════════════════════════════════╗
-║                                                                ║
-║                        TO FINISH SETUP                         ║
-║                                                                ║
-║  1. Set your preferences in /opt/plextraktsync/plextraktsync-hackmonker/config.json     ║
-║                                                                ║
-║  2. Run the below command and follow the interactive script    ║
-║                                                                ║
-║  docker exec -it plextraktsync-hackmonker python3 -m plextraktsync login  ║
-║                                                                ║
-╚════════════════════════════════════════════════════════════════╝
-:
-2022-03-12 20:10:58,125 p=3710875 u=root n=ansible | ok: [localhost]
-2022-03-12 20:10:58,163 p=3710875 u=root n=ansible | PLAY RECAP *************************************************************************************************************************
-2022-03-12 20:10:58,163 p=3710875 u=root n=ansible | localhost                  : ok=29   changed=7    unreachable=0    failed=0    skipped=10   rescued=0    ignored=0   
-2022-03-12 20:10:58,163 p=3710875 u=root n=ansible | Saturday 12 March 2022  20:10:58 +0530 (0:00:01.071)       0:00:15.818 ******** 
-2022-03-12 20:10:58,163 p=3710875 u=root n=ansible | =============================================================================== 
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plextraktsync : Resources | Tasks | Docker | Create Docker Container | Create Docker Container ------------------------------ 3.14s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plex_auth_token : Auth Token | Get X-Plex-Token ----------------------------------------------------------------------------- 2.91s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------- 1.93s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plextraktsync : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container ------------------------------ 1.12s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plextraktsync : Post-Install | Guide if Trakt.tv login data is missing ------------------------------------------------------ 1.07s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------ 0.79s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plextraktsync : Pre-Install | Create .env ----------------------------------------------------------------------------------- 0.69s
-2022-03-12 20:10:58,164 p=3710875 u=root n=ansible | plextraktsync : Post-Install | Check if a Trakt.tv username is provided ----------------------------------------------------- 0.47s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plextraktsync : Pre-Install | Get Preferences.xml XML data ------------------------------------------------------------------ 0.41s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plextraktsync : Check if `.env` exists -------------------------------------------------------------------------------------- 0.38s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plextraktsync : Create directories ------------------------------------------------------------------------------------------ 0.30s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plex_auth_token : Change permissions ---------------------------------------------------------------------------------------- 0.28s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plextraktsync : Post-Install | Check if `.pytrakt.json` exists -------------------------------------------------------------- 0.26s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plextraktsync : Pre-Install | Check if Preferences.xml exists --------------------------------------------------------------- 0.25s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plex_auth_token : Auth Token | Create directories --------------------------------------------------------------------------- 0.24s
-2022-03-12 20:10:58,165 p=3710875 u=root n=ansible | plex_auth_token : Auth Token | Check if PIN exists -------------------------------------------------------------------------- 0.24s
-2022-03-12 20:10:58,166 p=3710875 u=root n=ansible | plextraktsync : Post-Install | Check if a Plex.tv username is provided ------------------------------------------------------ 0.23s
-2022-03-12 20:10:58,166 p=3710875 u=root n=ansible | plextraktsync : Pre-Install Tasks ------------------------------------------------------------------------------------------- 0.09s
-2022-03-12 20:10:58,166 p=3710875 u=root n=ansible | plextraktsync : Execute Plextraktsync tasks --------------------------------------------------------------------------------- 0.06s
-2022-03-12 20:10:58,166 p=3710875 u=root n=ansible | plextraktsync : Create Docker container ------------------------------------------------------------------------------------- 0.06s
+2022-03-15 22:21:19,967 p=2603408 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************
+2022-03-15 22:21:19,987 p=2603408 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************
+2022-03-15 22:21:19,988 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:19 +0530 (0:00:00.025)       0:00:00.025 ********* 
+2022-03-15 22:21:21,982 p=2603408 u=root n=ansible | ok: [localhost]
+2022-03-15 22:21:22,018 p=2603408 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************
+2022-03-15 22:21:22,018 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:22 +0530 (0:00:02.030)       0:00:02.055 ********* 
+2022-03-15 22:21:22,416 p=2603408 u=root n=ansible | changed: [localhost] => (item=/var/lib/apt/lists/lock)
+2022-03-15 22:21:22,617 p=2603408 u=root n=ansible | changed: [localhost] => (item=/var/cache/apt/archives/lock)
+2022-03-15 22:21:22,819 p=2603408 u=root n=ansible | changed: [localhost] => (item=/var/lib/dpkg/lock)
+2022-03-15 22:21:22,866 p=2603408 u=root n=ansible | TASK [m4btool : Remove existing Docker container] **********************************************************************************
+2022-03-15 22:21:22,866 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:22 +0530 (0:00:00.847)       0:00:02.903 ********* 
+2022-03-15 22:21:22,908 p=2603408 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/remove_docker_container.yml for localhost
+2022-03-15 22:21:22,927 p=2603408 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Remove Docker Container | Set '_var_prefix' variable] *********************************
+2022-03-15 22:21:22,927 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:22 +0530 (0:00:00.060)       0:00:02.964 ********* 
+2022-03-15 22:21:22,952 p=2603408 u=root n=ansible | ok: [localhost]
+2022-03-15 22:21:22,971 p=2603408 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container] ************************************
+2022-03-15 22:21:22,971 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:22 +0530 (0:00:00.044)       0:00:03.008 ********* 
+2022-03-15 22:21:23,947 p=2603408 u=root n=ansible | changed: [localhost]
+2022-03-15 22:21:23,963 p=2603408 u=root n=ansible | TASK [m4btool : Create directories] ************************************************************************************************
+2022-03-15 22:21:23,963 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:23 +0530 (0:00:00.992)       0:00:04.000 ********* 
+2022-03-15 22:21:24,269 p=2603408 u=root n=ansible | changed: [localhost] => (item=/opt/ab-automation/m4btool)
+2022-03-15 22:21:24,436 p=2603408 u=root n=ansible | ok: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/untagged)
+2022-03-15 22:21:24,650 p=2603408 u=root n=ansible | ok: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/mp3merge)
+2022-03-15 22:21:24,867 p=2603408 u=root n=ansible | ok: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/delete)
+2022-03-15 22:21:24,889 p=2603408 u=root n=ansible | TASK [m4btool : Install Organize-Tool] *********************************************************************************************
+2022-03-15 22:21:24,889 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:24 +0530 (0:00:00.926)       0:00:04.926 ********* 
+2022-03-15 22:21:27,359 p=2603408 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["/usr/bin/python3", "-m", "pip.__main__", "install", "organize-tool"], "msg": "stdout: Collecting organize-tool\n  Using cached organize_tool-2.1.2-py3-none-any.whl (49 kB)\nCollecting fs<3.0.0,>=2.4.15\n  Using cached fs-2.4.15-py2.py3-none-any.whl (133 kB)\nCollecting Jinja2<4.0.0,>=3.0.3\n  Using cached Jinja2-3.0.3-py3-none-any.whl (133 kB)\nRequirement already satisfied: simplematch<2.0,>=1.3 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (1.3)\nRequirement already satisfied: Send2Trash[nativelib]<2.0.0,>=1.8.0 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (1.8.0)\nCollecting click<9.0.0,>=8.0.3\n  Using cached click-8.0.4-py3-none-any.whl (97 kB)\nRequirement already satisfied: ExifRead<3.0.0,>=2.3.2 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (2.3.2)\nCollecting schema<0.8.0,>=0.7.5\n  Using cached schema-0.7.5-py2.py3-none-any.whl (17 kB)\nCollecting PyYAML<6.0.0,>=5.4.1\n  Using cached PyYAML-5.4.1-cp38-cp38-manylinux1_x86_64.whl (662 kB)\nCollecting rich<12.0.0,>=11.0.0\n  Using cached rich-11.2.0-py3-none-any.whl (217 kB)\nRequirement already satisfied: appdirs~=1.4.3 in /usr/lib/python3/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (1.4.3)\nRequirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (60.9.3)\nRequirement already satisfied: six~=1.10 in /usr/lib/python3/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (1.14.0)\nRequirement already satisfied: pytz in /usr/local/lib/python3.8/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (2021.3)\nCollecting MarkupSafe>=2.0\n  Downloading MarkupSafe-2.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\nRequirement already satisfied: colorama<0.5.0,>=0.4.0 in /usr/lib/python3/dist-packages (from rich<12.0.0,>=11.0.0->organize-tool) (0.4.3)\nRequirement already satisfied: commonmark<0.10.0,>=0.9.0 in /usr/local/lib/python3.8/dist-packages (from rich<12.0.0,>=11.0.0->organize-tool) (0.9.1)\nCollecting pygments<3.0.0,>=2.6.0\n  Using cached Pygments-2.11.2-py3-none-any.whl (1.1 MB)\nCollecting contextlib2>=0.5.5\n  Using cached contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)\nInstalling collected packages: PyYAML, pygments, MarkupSafe, fs, contextlib2, click, schema, rich, Jinja2, organize-tool\n  Attempting uninstall: PyYAML\n    Found existing installation: PyYAML 5.3.1\n\n:stderr: /usr/lib/python3/dist-packages/secretstorage/dhcrypto.py:15: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead\n  from cryptography.utils import int_from_bytes\n/usr/lib/python3/dist-packages/secretstorage/util.py:19: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead\n  from cryptography.utils import int_from_bytes\nERROR: Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.\nWARNING: You are using pip version 22.0.3; however, version 22.0.4 is available.\nYou should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade pip' command.\n"}
+2022-03-15 22:21:27,359 p=2603408 u=root n=ansible | ...ignoring
+2022-03-15 22:21:27,376 p=2603408 u=root n=ansible | TASK [m4btool : Runs the organizr command every 5 mins] ****************************************************************************
+2022-03-15 22:21:27,376 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:27 +0530 (0:00:02.486)       0:00:07.413 ********* 
+2022-03-15 22:21:27,767 p=2603408 u=root n=ansible | ok: [localhost]
+2022-03-15 22:21:27,783 p=2603408 u=root n=ansible | TASK [m4btool : Create Docker container] *******************************************************************************************
+2022-03-15 22:21:27,783 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:27 +0530 (0:00:00.407)       0:00:07.820 ********* 
+2022-03-15 22:21:27,818 p=2603408 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/create_docker_container.yml for localhost
+2022-03-15 22:21:27,835 p=2603408 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Create Docker Container | Set '_var_prefix' variable] *********************************
+2022-03-15 22:21:27,836 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:27 +0530 (0:00:00.052)       0:00:07.873 ********* 
+2022-03-15 22:21:27,865 p=2603408 u=root n=ansible | ok: [localhost]
+2022-03-15 22:21:27,882 p=2603408 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Create Docker Container | Create Docker Container] ************************************
+2022-03-15 22:21:27,883 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:27 +0530 (0:00:00.046)       0:00:07.920 ********* 
+2022-03-15 22:21:43,450 p=2603408 u=root n=ansible | changed: [localhost]
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | PLAY RECAP *************************************************************************************************************************
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | localhost                  : ok=11   changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | Tuesday 15 March 2022  22:21:43 +0530 (0:00:15.653)       0:00:23.573 ********* 
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | =============================================================================== 
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | m4btool : Resources | Tasks | Docker | Create Docker Container | Create Docker Container ----------------------------------- 15.65s
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | m4btool : Install Organize-Tool --------------------------------------------------------------------------------------------- 2.49s
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------- 2.03s
+2022-03-15 22:21:43,536 p=2603408 u=root n=ansible | m4btool : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container ------------------------------------ 0.99s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Create directories ------------------------------------------------------------------------------------------------ 0.93s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------ 0.85s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Runs the organizr command every 5 mins ---------------------------------------------------------------------------- 0.41s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Remove existing Docker container ---------------------------------------------------------------------------------- 0.06s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Create Docker container ------------------------------------------------------------------------------------------- 0.05s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Resources | Tasks | Docker | Create Docker Container | Set '_var_prefix' variable --------------------------------- 0.05s
+2022-03-15 22:21:43,537 p=2603408 u=root n=ansible | m4btool : Resources | Tasks | Docker | Remove Docker Container | Set '_var_prefix' variable --------------------------------- 0.04s

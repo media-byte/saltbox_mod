@@ -30,10 +30,11 @@
   ignore_errors: yes
 
 - name: Runs the organizr command every 5 mins
-  ansible.builtin.cron:
+  cron:
     name: "Move Audiobook files"
     minute: "5"
-    job: "organize run /opt/ab-automation/organize/config.yaml"
+    job: "/usr/local/bin/organize run /opt/ab-automation/organize/config.yaml"
+    user: "{{ user.name }}"
 
 - name: Create Docker container
   include_tasks: "{{ resources_tasks_path }}/docker/create_docker_container.yml"
