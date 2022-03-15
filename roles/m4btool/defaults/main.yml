@@ -106,6 +106,3 @@ m4btool_docker_state: started
 
 # Stop Timeout
 m4btool_docker_stop_timeout: 10
-
-# User
-m4btool_docker_user: "{{ uid }}:{{ gid }}"
