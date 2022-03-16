@@ -23,6 +23,7 @@
   - "/mnt/local/downloads/audiobooks/temp/untagged"
   - "/mnt/local/downloads/audiobooks/temp/mp3merge"
   - "/mnt/local/downloads/audiobooks/temp/delete"
+  - "/mnt/local/Media/Audiobooks"
 
 - name: Install Organize-Tool
   pip:
