@@ -33,8 +33,8 @@
 - name: Runs the organizr command every 5 mins
   cron:
     name: "Move Audiobook files"
-    minute: "5"
-    job: "/usr/local/bin/organize run /opt/ab-automation/organize/config.yaml"
+    minute: "*/5"
+    job: "/usr/local/bin/organize run /opt/ab-automation/organize/config.yaml && curl -fsS --retry 5 -o /dev/null https://hc-ping.com/d10fbb4a-ae2d-4525-819d-6eb301573dbb"
     user: "{{ user.name }}"
 
 - name: Create Docker container

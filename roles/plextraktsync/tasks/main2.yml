@@ -35,8 +35,8 @@
   ansible.builtin.cron:
     name: "Run plextraktsync sync"
     minute: "0"
-    hour: "12"
-    job: "/bin/bash /opt/plextraktsync/pts.sh"
+    hour: "*/12"
+    job: "/bin/bash /opt/plextraktsync/pts.sh && curl -fsS --retry 5 -o /dev/null https://hc-ping.com/145f3b49-fab2-4bb6-980d-95457f095ed9"
     user: "{{ user.name }}"
 
 - name: Post-Install Tasks
