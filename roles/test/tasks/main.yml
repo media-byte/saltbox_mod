@@ -1,0 +1,12 @@
+- name: test
+  uri:
+    url: https://api.github.com/repos/saltydk/sarotate/releases/latest
+  register: myfile_latest
+
+- name: test 2
+  set_fact:
+    test2: "{{ myfile_latest.json.assets | selectattr('name', '==', 'SARotate-linux-x64') | map(attribute='browser_download_url') }}"
+
+- name: test 2 msg
+  debug:
+    msg: "{{ test2 }}"

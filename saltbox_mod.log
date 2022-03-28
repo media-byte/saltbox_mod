@@ -1,56 +1,32 @@
 
-2022-03-15 23:58:52,266 p=2647167 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************
-2022-03-15 23:58:52,282 p=2647167 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************
-2022-03-15 23:58:52,282 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:52 +0530 (0:00:00.020)       0:00:00.020 ********* 
-2022-03-15 23:58:54,262 p=2647167 u=root n=ansible | ok: [localhost]
-2022-03-15 23:58:54,295 p=2647167 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************
-2022-03-15 23:58:54,296 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:54 +0530 (0:00:02.013)       0:00:02.034 ********* 
-2022-03-15 23:58:54,702 p=2647167 u=root n=ansible | ok: [localhost] => (item=/var/lib/apt/lists/lock)
-2022-03-15 23:58:54,922 p=2647167 u=root n=ansible | ok: [localhost] => (item=/var/cache/apt/archives/lock)
-2022-03-15 23:58:55,136 p=2647167 u=root n=ansible | ok: [localhost] => (item=/var/lib/dpkg/lock)
-2022-03-15 23:58:55,177 p=2647167 u=root n=ansible | TASK [m4btool : Remove existing Docker container] **********************************************************************************
-2022-03-15 23:58:55,178 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:55 +0530 (0:00:00.882)       0:00:02.916 ********* 
-2022-03-15 23:58:55,216 p=2647167 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/remove_docker_container.yml for localhost
-2022-03-15 23:58:55,233 p=2647167 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Remove Docker Container | Set '_var_prefix' variable] *********************************
-2022-03-15 23:58:55,233 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:55 +0530 (0:00:00.055)       0:00:02.971 ********* 
-2022-03-15 23:58:55,264 p=2647167 u=root n=ansible | ok: [localhost]
-2022-03-15 23:58:55,284 p=2647167 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container] ************************************
-2022-03-15 23:58:55,284 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:55 +0530 (0:00:00.050)       0:00:03.022 ********* 
-2022-03-15 23:58:56,261 p=2647167 u=root n=ansible | ok: [localhost]
-2022-03-15 23:58:56,277 p=2647167 u=root n=ansible | TASK [m4btool : Create directories] ************************************************************************************************
-2022-03-15 23:58:56,277 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:56 +0530 (0:00:00.993)       0:00:04.015 ********* 
-2022-03-15 23:58:56,626 p=2647167 u=root n=ansible | ok: [localhost] => (item=/opt/ab-automation/m4btool)
-2022-03-15 23:58:56,834 p=2647167 u=root n=ansible | changed: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/untagged)
-2022-03-15 23:58:57,081 p=2647167 u=root n=ansible | ok: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/mp3merge)
-2022-03-15 23:58:57,311 p=2647167 u=root n=ansible | ok: [localhost] => (item=/mnt/local/downloads/audiobooks/temp/delete)
-2022-03-15 23:58:57,329 p=2647167 u=root n=ansible | TASK [m4btool : Install Organize-Tool] *********************************************************************************************
-2022-03-15 23:58:57,329 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:58:57 +0530 (0:00:01.051)       0:00:05.067 ********* 
-2022-03-15 23:59:00,050 p=2647167 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": false, "cmd": ["/usr/bin/python3", "-m", "pip.__main__", "install", "organize-tool"], "msg": "stdout: Collecting organize-tool\n  Using cached organize_tool-2.1.2-py3-none-any.whl (49 kB)\nCollecting fs<3.0.0,>=2.4.15\n  Using cached fs-2.4.15-py2.py3-none-any.whl (133 kB)\nRequirement already satisfied: Send2Trash[nativelib]<2.0.0,>=1.8.0 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (1.8.0)\nCollecting rich<12.0.0,>=11.0.0\n  Using cached rich-11.2.0-py3-none-any.whl (217 kB)\nRequirement already satisfied: simplematch<2.0,>=1.3 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (1.3)\nCollecting Jinja2<4.0.0,>=3.0.3\n  Using cached Jinja2-3.0.3-py3-none-any.whl (133 kB)\nCollecting PyYAML<6.0.0,>=5.4.1\n  Using cached PyYAML-5.4.1-cp38-cp38-manylinux1_x86_64.whl (662 kB)\nRequirement already satisfied: ExifRead<3.0.0,>=2.3.2 in /usr/local/lib/python3.8/dist-packages (from organize-tool) (2.3.2)\nCollecting schema<0.8.0,>=0.7.5\n  Using cached schema-0.7.5-py2.py3-none-any.whl (17 kB)\nCollecting click<9.0.0,>=8.0.3\n  Using cached click-8.0.4-py3-none-any.whl (97 kB)\nRequirement already satisfied: pytz in /usr/local/lib/python3.8/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (2021.3)\nRequirement already satisfied: appdirs~=1.4.3 in /usr/lib/python3/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (1.4.3)\nRequirement already satisfied: setuptools in /usr/local/lib/python3.8/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (60.9.3)\nRequirement already satisfied: six~=1.10 in /usr/lib/python3/dist-packages (from fs<3.0.0,>=2.4.15->organize-tool) (1.14.0)\nCollecting MarkupSafe>=2.0\n  Using cached MarkupSafe-2.1.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)\nRequirement already satisfied: colorama<0.5.0,>=0.4.0 in /usr/lib/python3/dist-packages (from rich<12.0.0,>=11.0.0->organize-tool) (0.4.3)\nRequirement already satisfied: commonmark<0.10.0,>=0.9.0 in /usr/local/lib/python3.8/dist-packages (from rich<12.0.0,>=11.0.0->organize-tool) (0.9.1)\nCollecting pygments<3.0.0,>=2.6.0\n  Using cached Pygments-2.11.2-py3-none-any.whl (1.1 MB)\nCollecting contextlib2>=0.5.5\n  Using cached contextlib2-21.6.0-py2.py3-none-any.whl (13 kB)\nInstalling collected packages: PyYAML, pygments, MarkupSafe, fs, contextlib2, click, schema, rich, Jinja2, organize-tool\n  Attempting uninstall: PyYAML\n    Found existing installation: PyYAML 5.3.1\n\n:stderr: /usr/lib/python3/dist-packages/secretstorage/dhcrypto.py:15: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead\n  from cryptography.utils import int_from_bytes\n/usr/lib/python3/dist-packages/secretstorage/util.py:19: CryptographyDeprecationWarning: int_from_bytes is deprecated, use int.from_bytes instead\n  from cryptography.utils import int_from_bytes\nERROR: Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.\nWARNING: You are using pip version 22.0.3; however, version 22.0.4 is available.\nYou should consider upgrading via the '/usr/bin/python3 -m pip install --upgrade pip' command.\n"}
-2022-03-15 23:59:00,050 p=2647167 u=root n=ansible | ...ignoring
-2022-03-15 23:59:00,067 p=2647167 u=root n=ansible | TASK [m4btool : Runs the organizr command every 5 mins] ****************************************************************************
-2022-03-15 23:59:00,067 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:59:00 +0530 (0:00:02.738)       0:00:07.805 ********* 
-2022-03-15 23:59:00,518 p=2647167 u=root n=ansible | changed: [localhost]
-2022-03-15 23:59:00,535 p=2647167 u=root n=ansible | TASK [m4btool : Create Docker container] *******************************************************************************************
-2022-03-15 23:59:00,536 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:59:00 +0530 (0:00:00.468)       0:00:08.274 ********* 
-2022-03-15 23:59:00,572 p=2647167 u=root n=ansible | included: /srv/git/saltbox/resources/tasks/docker/create_docker_container.yml for localhost
-2022-03-15 23:59:00,590 p=2647167 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Create Docker Container | Set '_var_prefix' variable] *********************************
-2022-03-15 23:59:00,590 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:59:00 +0530 (0:00:00.054)       0:00:08.328 ********* 
-2022-03-15 23:59:00,618 p=2647167 u=root n=ansible | ok: [localhost]
-2022-03-15 23:59:00,636 p=2647167 u=root n=ansible | TASK [m4btool : Resources | Tasks | Docker | Create Docker Container | Create Docker Container] ************************************
-2022-03-15 23:59:00,636 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:59:00 +0530 (0:00:00.045)       0:00:08.374 ********* 
-2022-03-15 23:59:03,040 p=2647167 u=root n=ansible | changed: [localhost]
-2022-03-15 23:59:03,127 p=2647167 u=root n=ansible | PLAY RECAP *************************************************************************************************************************
-2022-03-15 23:59:03,128 p=2647167 u=root n=ansible | localhost                  : ok=11   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1   
-2022-03-15 23:59:03,129 p=2647167 u=root n=ansible | Tuesday 15 March 2022  23:59:03 +0530 (0:00:02.492)       0:00:10.867 ********* 
-2022-03-15 23:59:03,130 p=2647167 u=root n=ansible | =============================================================================== 
-2022-03-15 23:59:03,130 p=2647167 u=root n=ansible | m4btool : Install Organize-Tool --------------------------------------------------------------------------------------------- 2.74s
-2022-03-15 23:59:03,131 p=2647167 u=root n=ansible | m4btool : Resources | Tasks | Docker | Create Docker Container | Create Docker Container ------------------------------------ 2.49s
-2022-03-15 23:59:03,131 p=2647167 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------- 2.01s
-2022-03-15 23:59:03,132 p=2647167 u=root n=ansible | m4btool : Create directories ------------------------------------------------------------------------------------------------ 1.05s
-2022-03-15 23:59:03,133 p=2647167 u=root n=ansible | m4btool : Resources | Tasks | Docker | Remove Docker Container | Remove Docker Container ------------------------------------ 0.99s
-2022-03-15 23:59:03,135 p=2647167 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------ 0.88s
-2022-03-15 23:59:03,137 p=2647167 u=root n=ansible | m4btool : Runs the organizr command every 5 mins ---------------------------------------------------------------------------- 0.47s
-2022-03-15 23:59:03,137 p=2647167 u=root n=ansible | m4btool : Remove existing Docker container ---------------------------------------------------------------------------------- 0.06s
-2022-03-15 23:59:03,138 p=2647167 u=root n=ansible | m4btool : Create Docker container ------------------------------------------------------------------------------------------- 0.05s
-2022-03-15 23:59:03,139 p=2647167 u=root n=ansible | m4btool : Resources | Tasks | Docker | Remove Docker Container | Set '_var_prefix' variable --------------------------------- 0.05s
-2022-03-15 23:59:03,139 p=2647167 u=root n=ansible | m4btool : Resources | Tasks | Docker | Create Docker Container | Set '_var_prefix' variable --------------------------------- 0.05s
+2022-03-28 23:35:00,372 p=2345463 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************************
+2022-03-28 23:35:00,393 p=2345463 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2022-03-28 23:35:00,393 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:00 +0530 (0:00:00.028)       0:00:00.028 ********** 
+2022-03-28 23:35:03,141 p=2345463 u=root n=ansible | ok: [localhost]
+2022-03-28 23:35:03,210 p=2345463 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************************
+2022-03-28 23:35:03,211 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:03 +0530 (0:00:02.817)       0:00:02.845 ********** 
+2022-03-28 23:35:03,773 p=2345463 u=root n=ansible | ok: [localhost] => (item=/var/lib/apt/lists/lock)
+2022-03-28 23:35:04,054 p=2345463 u=root n=ansible | ok: [localhost] => (item=/var/cache/apt/archives/lock)
+2022-03-28 23:35:04,315 p=2345463 u=root n=ansible | ok: [localhost] => (item=/var/lib/dpkg/lock)
+2022-03-28 23:35:04,441 p=2345463 u=root n=ansible | TASK [test : test] *****************************************************************************************************************************
+2022-03-28 23:35:04,441 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:04 +0530 (0:00:01.230)       0:00:04.076 ********** 
+2022-03-28 23:35:05,273 p=2345463 u=root n=ansible | ok: [localhost]
+2022-03-28 23:35:05,292 p=2345463 u=root n=ansible | TASK [test : test 2] ***************************************************************************************************************************
+2022-03-28 23:35:05,293 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:05 +0530 (0:00:00.851)       0:00:04.927 ********** 
+2022-03-28 23:35:05,360 p=2345463 u=root n=ansible | ok: [localhost]
+2022-03-28 23:35:05,383 p=2345463 u=root n=ansible | TASK [test : test 2 msg] ***********************************************************************************************************************
+2022-03-28 23:35:05,383 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:05 +0530 (0:00:00.090)       0:00:05.018 ********** 
+2022-03-28 23:35:05,408 p=2345463 u=root n=ansible | ok: [localhost] => {
+    "msg": [
+        "https://github.com/saltydk/SARotate/releases/download/v2.0.4/SARotate-linux-x64"
+    ]
+}
+2022-03-28 23:35:05,467 p=2345463 u=root n=ansible | PLAY RECAP *************************************************************************************************************************************
+2022-03-28 23:35:05,467 p=2345463 u=root n=ansible | localhost                  : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-03-28 23:35:05,468 p=2345463 u=root n=ansible | Monday 28 March 2022  23:35:05 +0530 (0:00:00.084)       0:00:05.102 ********** 
+2022-03-28 23:35:05,468 p=2345463 u=root n=ansible | =============================================================================== 
+2022-03-28 23:35:05,468 p=2345463 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------------------- 2.82s
+2022-03-28 23:35:05,469 p=2345463 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------------------ 1.23s
+2022-03-28 23:35:05,469 p=2345463 u=root n=ansible | test : test ----------------------------------------------------------------------------------------------------------------------------- 0.85s
+2022-03-28 23:35:05,469 p=2345463 u=root n=ansible | test : test 2 --------------------------------------------------------------------------------------------------------------------------- 0.09s
+2022-03-28 23:35:05,469 p=2345463 u=root n=ansible | test : test 2 msg ----------------------------------------------------------------------------------------------------------------------- 0.09s

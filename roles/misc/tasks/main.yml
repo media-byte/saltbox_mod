@@ -1,0 +1,37 @@
+#########################################################################
+# Title:            Sandbox Mod: Misc Scripts                           #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/media-byte/saltbox_mod           #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+
+- name: Get the hostname of the server
+  set_fact:
+    hostname: "{{ lookup('file', '/etc/hostname') }}"
+
+- name: Run plex optimize every day at 7am
+  cron:
+    name: "Run Plex Optimize"
+    minute: "0"
+    hour: "7"
+    job: "/bin/bash /opt/scripts/plex/optimize.sh"
+    user: "{{ user.name }}"
+  when: hostname == "mediabox"
+
+- name: Run weekly update of server and all apps
+  cron:
+    name: "Run Server Update"
+    special_time: weekly
+    job: "/bin/bash /opt/scripts/docker/mediabox-update.sh"
+    user: "{{ user.name }}"
+  when: hostname == "mediabox"
+
+- name: Run weekly update of server and all apps
+  cron:
+    name: "Run Server Update"
+    special_time: weekly
+    job: "/bin/bash /opt/scripts/docker/feederbox-update.sh"
+    user: "{{ user.name }}"
+  when: hostname == "feederbox"

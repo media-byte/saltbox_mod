@@ -1,0 +1,22 @@
+#########################################################################
+# Title:            Sandbox Mod: Crop                                   #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/media-byte/saltbox_mod           #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+
+- name: Copy the rclone config file to crop data folder
+  copy:  
+    src: "/home/{{ user.name }}/.config/rclone/rclone.conf"
+    dest: "{{ server_appdata_path }}/crop/rclone.conf"
+    owner: "{{ user.name }}"
+    group: "{{ user.name }}"
+
+- name: Runs the upload command every 15 mins
+  cron:
+    name: "Run crop upload"
+    minute: "*/15"
+    job: "docker run --rm -v /opt/crop:/opt/crop -v /opt/SA:/opt/SA -v /mnt:/mnt hotio/crop upload --config=/opt/crop/config.yml -l /opt/crop/logs/upload-log.txt && curl -fsS --retry 5 -o /dev/null https://hc-ping.com/b0572998-278e-401c-a0e8-dbba1a120229"
+    user: "{{ user.name }}"

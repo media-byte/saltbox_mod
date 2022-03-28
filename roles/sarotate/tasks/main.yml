@@ -1,0 +1,76 @@
+#########################################################################
+# Title:            Sandbox Mod: Sarotate                               #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/media-byte/saltbox_mod           #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+
+- name: Check if sarotate service exists
+  ansible.builtin.stat:
+    path: "/etc/systemd/system/sarotate.service"
+  register: sarotate_service
+
+- name: Stop existing sarotate service
+  ansible.builtin.systemd:
+    state: stopped
+    name: sarotate
+  when: sarotate_service.stat.exists
+
+- name: Check if rclone mount service exists
+  ansible.builtin.stat:
+    path: "/etc/systemd/system/rclone_vfs.service"
+  register: mount_service
+
+- name: Stop existing rclone mount service
+  ansible.builtin.systemd:
+    state: stopped
+    name: rclone_vfs
+  when: mount_service.stat.exists
+
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ user.name }}"
+    group: "{{ user.name }}"
+    mode: "0775"
+  with_items: "{{ lookup('vars', role_name + '_paths_folders_list') }}"
+
+- name: Download sarotate binary for linux x64
+  block:
+
+    - name: Set variable for output of sarotate releases
+      uri:
+        url: https://api.github.com/repos/saltydk/sarotate/releases/latest
+      register: sarotate_releases
+    
+    - name: Get the url for latest x64 sarotate binary
+      set_fact:
+        sarotate_latest: "{{ sarotate_releases.json.assets | selectattr('name', '==', 'SARotate-linux-x64') | map(attribute='browser_download_url') }}"
+
+    - name: Download sarotate binary
+      get_url:
+        url: "{{ sarotate_latest }}"
+        dest: "{{ server_appdata_path }}/sarotate/SARotate"
+
+- name: Check if sarotate config exists
+  stat:
+    path: "{{ server_appdata_path }}/sarotate/config.yaml"
+  register: sarotate_config
+
+#- name: Make sarotate binary executable
+
+#- name: Get the rclone rc port
+
+#- name: Get rclone rc user and pass
+
+#- name: Get remote names
+
+#- name: Make the config from template
+
+
+
+
+

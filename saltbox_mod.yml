@@ -9,3 +9,7 @@
     - { role: pre_tasks }
     - { role: plextraktsync, tags: ['plextraktsync'] }
     - { role: m4btool, tags: ['m4btool'] }
+    - { role: crop, tags: ['crop'] }
+    - { role: sarotate, tags: ['sarotate'] }
+    - { role: misc, tags: ['misc'] }
+    - { role: test, tags: ['test'] }
