@@ -1,0 +1,6 @@
+files:
+  '/opt/services':
+  {% for item in test.names %}
+  {{ item }}:
+      url: localhost:5623
+  {% endfor %}

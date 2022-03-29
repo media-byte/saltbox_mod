@@ -1,3 +1,12 @@
 ---
 plextraktsync:
   plexusers: ["hackmonker"]
+sarotate:
+  remotes: ["tv", "movies"]
+  sa_path: "/opt/sa"                
+  sleeptime:
+  rc_port: 
+  rc_user:
+  rc_pass:
+  apprise:
+
