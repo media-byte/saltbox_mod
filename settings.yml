@@ -2,9 +2,9 @@
 plextraktsync:
   plexusers: ["hackmonker"]
 sarotate:
-  remotes: ["tv", "movies"]
-  sa_path: "/opt/sa"                
-  sleeptime:
+  remotes: ["google"]
+  sa_path: your_sa_folder_path     
+  sleeptime: 20
   rc_port: 
   rc_user:
   rc_pass:

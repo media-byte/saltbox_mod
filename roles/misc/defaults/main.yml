@@ -1,0 +1,16 @@
+#########################################################################
+# Title:            Sandbox Mod: Misc Scripts                           #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/media-byte/saltbox_mod           #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+
+# Swap Vars
+
+swap_configure: true # or false
+swap_enable: true # or false
+swap_file_path: /swapfile
+swap_file_size_mb: 4096
+swappiness: 1

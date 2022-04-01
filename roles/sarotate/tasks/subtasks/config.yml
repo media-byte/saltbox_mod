@@ -1,5 +1,12 @@
-    
-    
+#########################################################################
+# Title:            Sandbox: SARotate                                   #
+# Author(s):        hackmonker                                          #
+# URL:              https://github.com/saltyorg/Sandbox                 #
+# --                                                                    #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+---    
     
 - name: Get types of the remote entered
   ansible.builtin.shell: "echo {{ lookup('ini', 'type', section=item, file=sarotate_paths_rclone_config_location) }}"
