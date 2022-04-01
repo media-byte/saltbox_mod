@@ -1,107 +1,46 @@
 
-2022-03-30 16:42:57,331 p=3468514 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************************
-2022-03-30 16:42:57,358 p=3468514 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
-2022-03-30 16:42:57,359 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:42:57 +0530 (0:00:00.033)       0:00:00.033 ******* 
-2022-03-30 16:42:59,882 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:42:59,927 p=3468514 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************************
-2022-03-30 16:42:59,928 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:42:59 +0530 (0:00:02.569)       0:00:02.602 ******* 
-2022-03-30 16:43:00,352 p=3468514 u=root n=ansible | ok: [localhost] => (item=/var/lib/apt/lists/lock)
-2022-03-30 16:43:00,614 p=3468514 u=root n=ansible | ok: [localhost] => (item=/var/cache/apt/archives/lock)
-2022-03-30 16:43:00,842 p=3468514 u=root n=ansible | ok: [localhost] => (item=/var/lib/dpkg/lock)
-2022-03-30 16:43:00,962 p=3468514 u=root n=ansible | TASK [sarotate : Check if sarotate service exists] *********************************************************************************************
-2022-03-30 16:43:00,962 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:00 +0530 (0:00:01.034)       0:00:03.637 ******* 
-2022-03-30 16:43:01,366 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:01,385 p=3468514 u=root n=ansible | TASK [sarotate : Stop existing sarotate service] ***********************************************************************************************
-2022-03-30 16:43:01,386 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:01 +0530 (0:00:00.423)       0:00:04.060 ******* 
-2022-03-30 16:43:02,187 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:02,206 p=3468514 u=root n=ansible | TASK [sarotate : Check if rclone mount service exists] *****************************************************************************************
-2022-03-30 16:43:02,207 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:02 +0530 (0:00:00.821)       0:00:04.881 ******* 
-2022-03-30 16:43:02,489 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:02,514 p=3468514 u=root n=ansible | TASK [sarotate : Fail when rclone service is `not found`] **************************************************************************************
-2022-03-30 16:43:02,514 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:02 +0530 (0:00:00.307)       0:00:05.189 ******* 
-2022-03-30 16:43:02,535 p=3468514 u=root n=ansible | skipping: [localhost]
-2022-03-30 16:43:02,552 p=3468514 u=root n=ansible | TASK [sarotate : Create directories] ***********************************************************************************************************
-2022-03-30 16:43:02,553 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:02 +0530 (0:00:00.038)       0:00:05.227 ******* 
-2022-03-30 16:43:03,007 p=3468514 u=root n=ansible | ok: [localhost] => (item=/opt/sarotate)
-2022-03-30 16:43:03,035 p=3468514 u=root n=ansible | TASK [sarotate : Set variable for output of sarotate releases] *********************************************************************************
-2022-03-30 16:43:03,035 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:03 +0530 (0:00:00.482)       0:00:05.710 ******* 
-2022-03-30 16:43:03,772 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:03,791 p=3468514 u=root n=ansible | TASK [sarotate : Get the url for latest x64 sarotate binary] ***********************************************************************************
-2022-03-30 16:43:03,791 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:03 +0530 (0:00:00.756)       0:00:06.466 ******* 
-2022-03-30 16:43:03,848 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:03,866 p=3468514 u=root n=ansible | TASK [sarotate : Download sarotate binary] *****************************************************************************************************
-2022-03-30 16:43:03,867 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:03 +0530 (0:00:00.075)       0:00:06.541 ******* 
-2022-03-30 16:43:04,709 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:04,726 p=3468514 u=root n=ansible | TASK [sarotate : Check if sarotate config exists] **********************************************************************************************
-2022-03-30 16:43:04,727 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:04 +0530 (0:00:00.860)       0:00:07.401 ******* 
-2022-03-30 16:43:05,164 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:05,181 p=3468514 u=root n=ansible | TASK [sarotate : Make sarotate binary executable] **********************************************************************************************
-2022-03-30 16:43:05,181 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:05 +0530 (0:00:00.454)       0:00:07.856 ******* 
-2022-03-30 16:43:05,457 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:05,479 p=3468514 u=root n=ansible | TASK [sarotate : Fail when remotes are `not added`] ********************************************************************************************
-2022-03-30 16:43:05,479 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:05 +0530 (0:00:00.297)       0:00:08.153 ******* 
-2022-03-30 16:43:05,500 p=3468514 u=root n=ansible | skipping: [localhost]
-2022-03-30 16:43:05,518 p=3468514 u=root n=ansible | TASK [sarotate : Fail when sa folder path are `not added`] *************************************************************************************
-2022-03-30 16:43:05,518 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:05 +0530 (0:00:00.039)       0:00:08.193 ******* 
-2022-03-30 16:43:05,538 p=3468514 u=root n=ansible | skipping: [localhost]
-2022-03-30 16:43:05,588 p=3468514 u=root n=ansible | TASK [sarotate : Settings | Check if `config.yaml` exists] *************************************************************************************
-2022-03-30 16:43:05,588 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:05 +0530 (0:00:00.069)       0:00:08.263 ******* 
-2022-03-30 16:43:05,852 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:05,874 p=3468514 u=root n=ansible | TASK [sarotate : Get types of the remote entered] **********************************************************************************************
-2022-03-30 16:43:05,874 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:05 +0530 (0:00:00.286)       0:00:08.549 ******* 
-2022-03-30 16:43:06,330 p=3468514 u=root n=ansible | changed: [localhost] => (item=google)
-2022-03-30 16:43:06,350 p=3468514 u=root n=ansible | TASK [sarotate : Set variable for remote types] ************************************************************************************************
-2022-03-30 16:43:06,351 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.476)       0:00:09.025 ******* 
-2022-03-30 16:43:06,381 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:06,404 p=3468514 u=root n=ansible | TASK [sarotate : Get drive remote names] *******************************************************************************************************
-2022-03-30 16:43:06,404 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.053)       0:00:09.079 ******* 
-2022-03-30 16:43:06,437 p=3468514 u=root n=ansible | skipping: [localhost]
-2022-03-30 16:43:06,455 p=3468514 u=root n=ansible | TASK [sarotate : Set variable for union remote names] ******************************************************************************************
-2022-03-30 16:43:06,455 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.050)       0:00:09.130 ******* 
-2022-03-30 16:43:06,489 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:06,508 p=3468514 u=root n=ansible | TASK [sarotate : Get the upstreams of union remotes] *******************************************************************************************
-2022-03-30 16:43:06,509 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.053)       0:00:09.183 ******* 
-2022-03-30 16:43:06,800 p=3468514 u=root n=ansible | changed: [localhost] => (item=google)
-2022-03-30 16:43:06,821 p=3468514 u=root n=ansible | TASK [sarotate : Set variable for upstreams of union remotes] **********************************************************************************
-2022-03-30 16:43:06,821 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.312)       0:00:09.496 ******* 
-2022-03-30 16:43:06,859 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:06,879 p=3468514 u=root n=ansible | TASK [sarotate : Merge remote names and upstreams of both drive and union remotes] *************************************************************
-2022-03-30 16:43:06,880 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.058)       0:00:09.554 ******* 
-2022-03-30 16:43:06,916 p=3468514 u=root n=ansible | ok: [localhost] => (item=[])
-2022-03-30 16:43:06,919 p=3468514 u=root n=ansible | ok: [localhost] => (item=['movies', 'tv', 'music', 'audiobooks'])
-2022-03-30 16:43:06,937 p=3468514 u=root n=ansible | TASK [sarotate : Set variable for merged remote names] *****************************************************************************************
-2022-03-30 16:43:06,937 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.057)       0:00:09.612 ******* 
-2022-03-30 16:43:06,963 p=3468514 u=root n=ansible | ok: [localhost]
-2022-03-30 16:43:06,981 p=3468514 u=root n=ansible | TASK [sarotate : Import default config] ********************************************************************************************************
-2022-03-30 16:43:06,981 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:06 +0530 (0:00:00.044)       0:00:09.656 ******* 
-2022-03-30 16:43:07,800 p=3468514 u=root n=ansible | changed: [localhost]
-2022-03-30 16:43:07,818 p=3468514 u=root n=ansible | TASK [sarotate : Import sarotate service] ******************************************************************************************************
-2022-03-30 16:43:07,818 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:07 +0530 (0:00:00.836)       0:00:10.493 ******* 
-2022-03-30 16:43:07,839 p=3468514 u=root n=ansible | skipping: [localhost]
-2022-03-30 16:43:07,861 p=3468514 u=root n=ansible | TASK [sarotate : Load sarotate service] ********************************************************************************************************
-2022-03-30 16:43:07,861 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:07 +0530 (0:00:00.043)       0:00:10.536 ******* 
-2022-03-30 16:43:09,389 p=3468514 u=root n=ansible | changed: [localhost]
-2022-03-30 16:43:09,475 p=3468514 u=root n=ansible | PLAY RECAP *************************************************************************************************************************************
-2022-03-30 16:43:09,476 p=3468514 u=root n=ansible | localhost                  : ok=21   changed=4    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
-2022-03-30 16:43:09,476 p=3468514 u=root n=ansible | Wednesday 30 March 2022  16:43:09 +0530 (0:00:01.614)       0:00:12.151 ******* 
-2022-03-30 16:43:09,476 p=3468514 u=root n=ansible | =============================================================================== 
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------------------- 2.57s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Load sarotate service -------------------------------------------------------------------------------------------------------- 1.61s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------------------ 1.03s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Download sarotate binary ----------------------------------------------------------------------------------------------------- 0.86s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Import default config -------------------------------------------------------------------------------------------------------- 0.84s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Stop existing sarotate service ----------------------------------------------------------------------------------------------- 0.82s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Set variable for output of sarotate releases --------------------------------------------------------------------------------- 0.76s
-2022-03-30 16:43:09,477 p=3468514 u=root n=ansible | sarotate : Create directories ----------------------------------------------------------------------------------------------------------- 0.48s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Get types of the remote entered ---------------------------------------------------------------------------------------------- 0.48s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Check if sarotate config exists ---------------------------------------------------------------------------------------------- 0.45s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Check if sarotate service exists --------------------------------------------------------------------------------------------- 0.42s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Get the upstreams of union remotes ------------------------------------------------------------------------------------------- 0.31s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Check if rclone mount service exists ----------------------------------------------------------------------------------------- 0.31s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Make sarotate binary executable ---------------------------------------------------------------------------------------------- 0.30s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Settings | Check if `config.yaml` exists ------------------------------------------------------------------------------------- 0.29s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Get the url for latest x64 sarotate binary ----------------------------------------------------------------------------------- 0.08s
-2022-03-30 16:43:09,478 p=3468514 u=root n=ansible | sarotate : Fail when sa folder path are `not added` ------------------------------------------------------------------------------------- 0.07s
-2022-03-30 16:43:09,479 p=3468514 u=root n=ansible | sarotate : Set variable for upstreams of union remotes ---------------------------------------------------------------------------------- 0.06s
-2022-03-30 16:43:09,479 p=3468514 u=root n=ansible | sarotate : Merge remote names and upstreams of both drive and union remotes ------------------------------------------------------------- 0.06s
-2022-03-30 16:43:09,479 p=3468514 u=root n=ansible | sarotate : Set variable for remote types ------------------------------------------------------------------------------------------------ 0.05s
+2022-04-01 20:20:21,850 p=631107 u=root n=ansible | PLAY [localhost] *******************************************************************************************************************************
+2022-04-01 20:20:21,879 p=631107 u=root n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2022-04-01 20:20:21,880 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:21 +0530 (0:00:00.034)       0:00:00.034 ********** 
+2022-04-01 20:20:24,286 p=631107 u=root n=ansible | ok: [localhost]
+2022-04-01 20:20:24,352 p=631107 u=root n=ansible | TASK [pre_tasks : APT | Remove APT locks] ******************************************************************************************************
+2022-04-01 20:20:24,352 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:24 +0530 (0:00:02.472)       0:00:02.507 ********** 
+2022-04-01 20:20:24,869 p=631107 u=root n=ansible | ok: [localhost] => (item=/var/lib/apt/lists/lock)
+2022-04-01 20:20:25,121 p=631107 u=root n=ansible | ok: [localhost] => (item=/var/cache/apt/archives/lock)
+2022-04-01 20:20:25,371 p=631107 u=root n=ansible | ok: [localhost] => (item=/var/lib/dpkg/lock)
+2022-04-01 20:20:25,540 p=631107 u=root n=ansible | TASK [git : Git: is it up-to-date?] ************************************************************************************************************
+2022-04-01 20:20:25,541 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:25 +0530 (0:00:01.188)       0:00:03.695 ********** 
+2022-04-01 20:20:25,958 p=631107 u=root n=ansible | fatal: [localhost]: FAILED! => {"before": "afd490dbd31850cbb4a1002fbb257f66c5590c12", "changed": false, "msg": "Local modifications exist in repository (force=no)."}
+2022-04-01 20:20:25,958 p=631107 u=root n=ansible | ...ignoring
+2022-04-01 20:20:25,976 p=631107 u=root n=ansible | TASK [git : debug] *****************************************************************************************************************************
+2022-04-01 20:20:25,976 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:25 +0530 (0:00:00.435)       0:00:04.130 ********** 
+2022-04-01 20:20:25,999 p=631107 u=root n=ansible | ok: [localhost] => {
+    "git": {
+        "before": "afd490dbd31850cbb4a1002fbb257f66c5590c12",
+        "changed": false,
+        "failed": true,
+        "msg": "Local modifications exist in repository (force=no)."
+    }
+}
+2022-04-01 20:20:26,022 p=631107 u=root n=ansible | TASK [git : Git - Adding] **********************************************************************************************************************
+2022-04-01 20:20:26,022 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:26 +0530 (0:00:00.046)       0:00:04.176 ********** 
+2022-04-01 20:20:26,393 p=631107 u=root n=ansible | changed: [localhost]
+2022-04-01 20:20:26,412 p=631107 u=root n=ansible | TASK [git : debug] *****************************************************************************************************************************
+2022-04-01 20:20:26,413 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:26 +0530 (0:00:00.390)       0:00:04.567 ********** 
+2022-04-01 20:20:26,435 p=631107 u=root n=ansible | ok: [localhost] => {
+    "gitadd.cmd": "git add *"
+}
+2022-04-01 20:20:26,457 p=631107 u=root n=ansible | TASK [git : Git - commiting] *******************************************************************************************************************
+2022-04-01 20:20:26,458 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:26 +0530 (0:00:00.045)       0:00:04.612 ********** 
+2022-04-01 20:20:26,714 p=631107 u=root n=ansible | fatal: [localhost]: FAILED! => {"changed": true, "cmd": "git commit -m \"Updating saltbox mod repo\"", "delta": "0:00:00.010802", "end": "2022-04-01 20:20:26.682275", "msg": "non-zero return code", "rc": 128, "start": "2022-04-01 20:20:26.671473", "stderr": "\n*** Please tell me who you are.\n\nRun\n\n  git config --global user.email \"you@example.com\"\n  git config --global user.name \"Your Name\"\n\nto set your account's default identity.\nOmit --global to set the identity only in this repository.\n\nfatal: unable to auto-detect email address (got 'root@feederbox.(none)')", "stderr_lines": ["", "*** Please tell me who you are.", "", "Run", "", "  git config --global user.email \"you@example.com\"", "  git config --global user.name \"Your Name\"", "", "to set your account's default identity.", "Omit --global to set the identity only in this repository.", "", "fatal: unable to auto-detect email address (got 'root@feederbox.(none)')"], "stdout": "", "stdout_lines": []}
+2022-04-01 20:20:26,716 p=631107 u=root n=ansible | PLAY RECAP *************************************************************************************************************************************
+2022-04-01 20:20:26,716 p=631107 u=root n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-04-01 20:20:26,717 p=631107 u=root n=ansible | Friday 01 April 2022  20:20:26 +0530 (0:00:00.259)       0:00:04.871 ********** 
+2022-04-01 20:20:26,717 p=631107 u=root n=ansible | =============================================================================== 
+2022-04-01 20:20:26,717 p=631107 u=root n=ansible | Gathering Facts ------------------------------------------------------------------------------------------------------------------------- 2.47s
+2022-04-01 20:20:26,717 p=631107 u=root n=ansible | pre_tasks : APT | Remove APT locks ------------------------------------------------------------------------------------------------------ 1.19s
+2022-04-01 20:20:26,718 p=631107 u=root n=ansible | git : Git: is it up-to-date? ------------------------------------------------------------------------------------------------------------ 0.44s
+2022-04-01 20:20:26,718 p=631107 u=root n=ansible | git : Git - Adding ---------------------------------------------------------------------------------------------------------------------- 0.39s
+2022-04-01 20:20:26,718 p=631107 u=root n=ansible | git : Git - commiting ------------------------------------------------------------------------------------------------------------------- 0.26s
+2022-04-01 20:20:26,718 p=631107 u=root n=ansible | git : debug ----------------------------------------------------------------------------------------------------------------------------- 0.05s
+2022-04-01 20:20:26,718 p=631107 u=root n=ansible | git : debug ----------------------------------------------------------------------------------------------------------------------------- 0.05s

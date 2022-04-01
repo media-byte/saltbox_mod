@@ -13,4 +13,3 @@
     - { role: sarotate, tags: ['sarotate'] }
     - { role: misc, tags: ['misc'] }
     - { role: test, tags: ['test'] }
-    - { role: git, tags: ['git'] }
